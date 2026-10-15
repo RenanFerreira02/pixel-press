@@ -13,12 +13,12 @@
 <body>
 
   <!-- Capa: nome da revista, número da edição e chamada principal -->
-  <header class="night">
-    <div>
+  <header class="cover block night">
+    <div class="cover-bar">
       <p class="logo">PIXEL PRESS</p>
       <p class="label">Nº 01 · OUTUBRO 2026 · ZINE DE VIDEOGAMES</p>
     </div>
-    <div>
+    <div class="cover-intro">
       <p class="label cover-kicker">EDIÇÃO ESPECIAL</p>
       <h1>COMO NASCE UM JOGO</h1>
       <p class="dek">Da primeira ideia ao botão de comprar: acompanhamos a criação do Brotinho, um pequeno jogo de plataforma, fase por fase.</p>
@@ -36,7 +36,7 @@
   <main>
 
     <!-- Sumário e editorial -->
-    <div class="paper">
+    <div class="block paper">
       <nav class="toc" aria-labelledby="toc-title">
         <h2 id="toc-title" class="label">NESTA EDIÇÃO</h2>
         <ol>
@@ -52,7 +52,7 @@
       <article class="editorial">
         <p class="label">EDITORIAL</p>
         <h2>Todo jogo já foi uma folha em branco</h2>
-        <div>
+        <div class="editorial-text">
           <p>Quando a gente joga, vê só o resultado: o personagem pula, a música toca, a fase termina. Tudo parece ter estado ali desde sempre. Não esteve. Cada pixel, cada nota e cada regra foi decidida por alguém.</p>
           <p>Nesta edição, a Pixel Press inventou um jogo só para mostrar esse caminho. O Brotinho é uma semente que precisa chegar ao sol, e ele vai atravessar a revista inteira com a gente, da ideia rabiscada no caderno até a página da loja.</p>
           <p>Não é preciso saber programar para ler. É preciso só a curiosidade de quem já se perguntou: como será que fizeram isso?</p>
@@ -62,12 +62,12 @@
     </div>
 
     <!-- 01 · A ideia -->
-    <article id="idea" class="night">
-      <div>
+    <article id="idea" class="block night">
+      <div class="article-marker">
         <p class="article-number">01</p>
         <p class="label">A IDEIA</p>
       </div>
-      <div>
+      <div class="article-body">
         <h2>Tudo começa numa frase</h2>
         <p class="dek">Antes de desenhar qualquer coisa, quem faz jogos precisa explicar a ideia em uma frase. Se não cabe numa frase, ainda não é uma ideia: é um monte delas.</p>
         <p>A frase do Brotinho nasceu numa tarde de chuva: uma semente pula de folha em folha até chegar ao sol. Dali saiu o resto. Se ele é uma semente, a sombra faz mal. Se ele precisa de sol, cada fase sobe um pouco mais alto. Se chove, a água ajuda.</p>
@@ -98,7 +98,7 @@
           </div>
         </dl>
       </aside>
-      <ol>
+      <ol class="rules">
         <li>
           <h3 class="label">REGRA 1</h3>
           <p>O Brotinho só sabe pular. Não corre, não atira, não voa.</p>
@@ -115,18 +115,18 @@
     </article>
 
     <!-- 02 · Pixel art -->
-    <article id="pixel-art" class="paper">
-      <figure>
-        <div role="img" aria-label="O Brotinho em pixel art: uma semente marrom com olhos pretos, bochechas laranja e duas folhas verdes no alto da cabeça."></div>
+    <article id="pixel-art" class="block paper">
+      <figure class="sprite-figure">
+        <div class="sprite-frame" role="img" aria-label="O Brotinho em pixel art: uma semente marrom com olhos pretos, bochechas laranja e duas folhas verdes no alto da cabeça."></div>
         <figcaption>O Brotinho tem 12 × 13 pixels. Ampliado, cada quadrado da grade é um pixel do jogo.</figcaption>
       </figure>
-      <div>
+      <div class="article-body">
         <p class="label">02 · PIXEL ART</p>
         <h2>Um quadradinho por vez</h2>
         <p>Pixel art é desenhar com poucos pontos e poucas cores, de propósito. Com 12 pixels de largura não sobra espaço para detalhe: cada quadrado precisa trabalhar. Os dois olhos do Brotinho são só dois pixels pretos ao lado de dois brancos, e é isso que dá vida a ele.</p>
         <p>A limitação também é uma escolha de estilo. Consoles antigos só mostravam poucas cores ao mesmo tempo, e muitos jogos de hoje repetem essa regra para ganhar unidade visual. O Brotinho inteiro usa oito cores.</p>
         <h3 class="label">A PALETA</h3>
-        <ul>
+        <ul class="palette">
           <li><span class="swatch swatch-leaf"></span>Folha <code>#3fa34d</code></li>
           <li><span class="swatch swatch-leaf-light"></span>Brilho da folha <code>#7bd389</code></li>
           <li><span class="swatch swatch-outline"></span>Contorno <code>#5c3a21</code></li>
@@ -140,16 +140,16 @@
     </article>
 
     <!-- 03 · Som -->
-    <article id="sound" class="night">
-      <div>
+    <article id="sound" class="block night">
+      <div class="article-marker">
         <p class="article-number">03</p>
         <p class="label">SOM</p>
       </div>
-      <div>
+      <div class="article-body">
         <h2>Quatro canais e muita imaginação</h2>
         <p class="dek">O console de 8 bits mais famoso dos anos 80 tinha quatro canais principais de som. Toda música e todo efeito saíam deles, ao mesmo tempo. A trilha do Brotinho segue a mesma regra: quatro vozes, nenhuma a mais.</p>
       </div>
-      <ul>
+      <ul class="channels">
         <li class="channel channel-pulse">
           <!-- Desenho da onda: decorativo, o leitor de tela pula -->
           <svg width="120" height="40" viewBox="0 0 120 40" aria-hidden="true" focusable="false">
@@ -183,14 +183,14 @@
     </article>
 
     <!-- 04 · Código -->
-    <article id="code" class="paper">
-      <div>
+    <article id="code" class="block paper">
+      <div class="article-body">
         <p class="label">04 · CÓDIGO</p>
         <h2>O laço que nunca para</h2>
         <p>Por baixo de qualquer jogo existe um laço, o game loop. Ele faz sempre as mesmas quatro coisas, em ordem, sem parar, enquanto o jogo estiver aberto.</p>
         <p>Se o jogador aperta espaço, o laço percebe na leitura dos controles, muda a altura do Brotinho na atualização e mostra o pulo no desenho. Tudo isso tão rápido que parece um movimento só.</p>
       </div>
-      <blockquote>
+      <blockquote class="highlight">
         <p class="highlight-title">60 VEZES POR SEGUNDO</p>
         <p>Cada volta do laço tem menos de 17 milésimos de segundo para acontecer.</p>
       </blockquote>
@@ -225,37 +225,37 @@
     </article>
 
     <!-- 05 · Testes -->
-    <article id="tests" class="night">
-      <div>
+    <article id="tests" class="block night">
+      <div class="article-body">
         <p class="label tests-label">05 · TESTES</p>
         <h2>Quando outra pessoa joga</h2>
         <p>Quem faz o jogo já sabe todos os segredos dele, então não serve para testar. No playtest, a equipe chama gente de fora, entrega o controle e fica quieta, só anotando. Foi o que fizemos com o Brotinho.</p>
       </div>
-      <figure class="quote-lia">
+      <figure class="quote quote-lia">
         <blockquote>
           <p>“Fiquei na sombra sem perceber e o Brotinho murchou. Achei injusto.”</p>
         </blockquote>
         <figcaption class="label">LIA, 11 ANOS</figcaption>
       </figure>
-      <figure class="quote-caio">
+      <figure class="quote quote-caio">
         <blockquote>
           <p>“O PULO EXTRA DA CHUVA É A MELHOR PARTE. QUERIA MAIS CHUVA.”</p>
         </blockquote>
         <figcaption class="label">Caio, 34 anos</figcaption>
       </figure>
-      <figure class="quote-bia">
+      <figure class="quote quote-bia">
         <blockquote>
           <p>“Não entendi que dava para segurar o espaço e pular mais alto. Descobri sem querer na terceira fase.”</p>
         </blockquote>
         <figcaption class="label">BIA, 19 ANOS</figcaption>
       </figure>
-      <figure class="quote-antonio">
+      <figure class="quote quote-antonio">
         <blockquote>
           <p>“Joguei as três fases duas vezes seguidas. Na segunda fui bem mais rápido.”</p>
         </blockquote>
         <figcaption class="label">ANTÔNIO, 62 ANOS</figcaption>
       </figure>
-      <div>
+      <div class="tests-changes">
         <h3 class="label">O QUE MUDOU DEPOIS DOS TESTES</h3>
         <ul>
           <li>As folhas do Brotinho ficam cinzentas assim que ele entra na sombra, antes de murchar.</li>
@@ -266,8 +266,8 @@
     </article>
 
     <!-- 06 · Lançamento -->
-    <article id="launch" class="paper">
-      <div>
+    <article id="launch" class="block paper">
+      <div class="article-body">
         <p class="label">06 · LANÇAMENTO</p>
         <h2>O jogo sai de casa</h2>
         <p>Terminar o jogo é só metade do caminho. Agora ele precisa de uma página na loja, com nome, descrição curta, imagens e um trailer de 30 segundos que mostre o pulo, a sombra e a chuva logo de cara.</p>
@@ -279,7 +279,7 @@
         <p class="store-price">[PREÇO]</p>
         <a class="buy-button" href="#launch">COMPRAR</a>
       </aside>
-      <div>
+      <div class="glossary">
         <h3 class="label">GLOSSÁRIO</h3>
         <dl>
           <div>
@@ -313,9 +313,9 @@
   </main>
 
   <!-- Expediente -->
-  <footer class="night">
+  <footer class="block night">
     <p class="logo">PIXEL PRESS</p>
-    <p>Nº 01 · Outubro de 2026. Projeto educacional de Renan Ferreira. O Brotinho, sua equipe e seus testadores são fictícios, e toda a arte foi feita com CSS. Fontes Press Start 2P e Atkinson Hyperlegible, do Google Fonts, sob a licença SIL Open Font License.</p>
+    <p class="footer-text">Nº 01 · Outubro de 2026. Projeto educacional de Renan Ferreira. O Brotinho, sua equipe e seus testadores são fictícios, e toda a arte foi feita com CSS. Fontes Press Start 2P e Atkinson Hyperlegible, do Google Fonts, sob a licença SIL Open Font License.</p>
   </footer>
 
 </body>

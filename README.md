@@ -14,6 +14,7 @@ Para ver a página como ela estava em uma etapa, use `git log --oneline` e depoi
 - `01-estrutura-editorial`: todo o conteúdo da revista em HTML semântico, ainda sem CSS.
 - `02-tipografia`: `style.css` com as fontes Press Start 2P e Atkinson Hyperlegible, escala de tamanhos, `line-height` e `letter-spacing`.
 - `03-paleta-com-variaveis`: cores em variáveis `--color-*`, contraste conferido e fundos alternados noite e papel.
+- `04-grid-de-colunas`: grid de 12 colunas em todos os blocos, com `grid-column`, `margin`, `padding` e `border`.
 
 ## Créditos
 
