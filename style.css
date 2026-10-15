@@ -643,7 +643,7 @@ footer .logo {
 .topics {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
 }
 
 /* ===== Position =====
@@ -654,25 +654,22 @@ footer .logo {
   position: relative;
 }
 
-/* Sol no canto superior direito. Por enquanto, um quadrado amarelo */
+/* Sol no canto superior direito */
 .cover-sun {
   position: absolute;
   top: 136px;
   right: 80px;
   width: 140px;
   height: 140px;
-  background-color: var(--color-sun);
 }
 
-/* Lugar do Brotinho, em pé sobre o chão (bottom: 80px, a altura do chão).
-   A borda tracejada só marca o espaço até o desenho chegar. */
+/* Brotinho em pé sobre o chão (bottom: 80px, a altura do chão) */
 .cover-sprout {
   position: absolute;
   right: 163px;
   bottom: 80px;
   width: 288px;
   height: 312px;
-  border: 4px dashed var(--color-sprout);
 }
 
 /* Chão na largura toda: left 0 e right 0 esticam a faixa de ponta a ponta */
@@ -684,4 +681,289 @@ footer .logo {
   height: 80px;
   border-top: 16px solid var(--color-sprout);
   background-color: #3fa34d;
+}
+
+/* ===== Pixel art com box-shadow =====
+   Cada sombra "x y 0 cor" é uma cópia do elemento, sem desfoque, deslocada x para a
+   direita e y para baixo. Um elemento do tamanho de um pixel + uma sombra por pixel = um desenho.
+   A sombra não aparece embaixo do próprio elemento; por isso ele fica um pixel para fora
+   (top e left negativos) e as sombras começam em 1 pixel. */
+
+.pixel {
+  position: absolute;
+}
+
+/* O Brotinho: 12 × 13 pixels de 16 px = 192 × 208 px */
+.sprout {
+  position: relative;
+  width: 192px;
+  height: 208px;
+}
+
+.sprout .pixel {
+  top: -16px;
+  left: -16px;
+  width: 16px;
+  height: 16px;
+  box-shadow:
+    /* linha 1: ....GG..GG.. */
+    80px 16px 0 #3fa34d,
+    96px 16px 0 #3fa34d,
+    144px 16px 0 #3fa34d,
+    160px 16px 0 #3fa34d,
+    /* linha 2: ...GLLGGLLG. */
+    64px 32px 0 #3fa34d,
+    80px 32px 0 #7bd389,
+    96px 32px 0 #7bd389,
+    112px 32px 0 #3fa34d,
+    128px 32px 0 #3fa34d,
+    144px 32px 0 #7bd389,
+    160px 32px 0 #7bd389,
+    176px 32px 0 #3fa34d,
+    /* linha 3: ....GLGGLG.. */
+    80px 48px 0 #3fa34d,
+    96px 48px 0 #7bd389,
+    112px 48px 0 #3fa34d,
+    128px 48px 0 #3fa34d,
+    144px 48px 0 #7bd389,
+    160px 48px 0 #3fa34d,
+    /* linha 4: .....GGGG... */
+    96px 64px 0 #3fa34d,
+    112px 64px 0 #3fa34d,
+    128px 64px 0 #3fa34d,
+    144px 64px 0 #3fa34d,
+    /* linha 5: ......GG.... */
+    112px 80px 0 #3fa34d,
+    128px 80px 0 #3fa34d,
+    /* linha 6: ......GG.... */
+    112px 96px 0 #3fa34d,
+    128px 96px 0 #3fa34d,
+    /* linha 7: ....BBBBBB.. */
+    80px 112px 0 #5c3a21,
+    96px 112px 0 #5c3a21,
+    112px 112px 0 #5c3a21,
+    128px 112px 0 #5c3a21,
+    144px 112px 0 #5c3a21,
+    160px 112px 0 #5c3a21,
+    /* linha 8: ...BHYYYYYB. */
+    64px 128px 0 #5c3a21,
+    80px 128px 0 #e3b07a,
+    96px 128px 0 #c98b4f,
+    112px 128px 0 #c98b4f,
+    128px 128px 0 #c98b4f,
+    144px 128px 0 #c98b4f,
+    160px 128px 0 #c98b4f,
+    176px 128px 0 #5c3a21,
+    /* linha 9: ..BHYWKYWKYB */
+    48px 144px 0 #5c3a21,
+    64px 144px 0 #e3b07a,
+    80px 144px 0 #c98b4f,
+    96px 144px 0 #fffaf0,
+    112px 144px 0 #1a1423,
+    128px 144px 0 #c98b4f,
+    144px 144px 0 #fffaf0,
+    160px 144px 0 #1a1423,
+    176px 144px 0 #c98b4f,
+    192px 144px 0 #5c3a21,
+    /* linha 10: ..BYYYYYYYYB */
+    48px 160px 0 #5c3a21,
+    64px 160px 0 #c98b4f,
+    80px 160px 0 #c98b4f,
+    96px 160px 0 #c98b4f,
+    112px 160px 0 #c98b4f,
+    128px 160px 0 #c98b4f,
+    144px 160px 0 #c98b4f,
+    160px 160px 0 #c98b4f,
+    176px 160px 0 #c98b4f,
+    192px 160px 0 #5c3a21,
+    /* linha 11: ..BYYYOOYYYB */
+    48px 176px 0 #5c3a21,
+    64px 176px 0 #c98b4f,
+    80px 176px 0 #c98b4f,
+    96px 176px 0 #c98b4f,
+    112px 176px 0 #f3722c,
+    128px 176px 0 #f3722c,
+    144px 176px 0 #c98b4f,
+    160px 176px 0 #c98b4f,
+    176px 176px 0 #c98b4f,
+    192px 176px 0 #5c3a21,
+    /* linha 12: ...BYYYYYYB. */
+    64px 192px 0 #5c3a21,
+    80px 192px 0 #c98b4f,
+    96px 192px 0 #c98b4f,
+    112px 192px 0 #c98b4f,
+    128px 192px 0 #c98b4f,
+    144px 192px 0 #c98b4f,
+    160px 192px 0 #c98b4f,
+    176px 192px 0 #5c3a21,
+    /* linha 13: ....BBBBBB.. */
+    80px 208px 0 #5c3a21,
+    96px 208px 0 #5c3a21,
+    112px 208px 0 #5c3a21,
+    128px 208px 0 #5c3a21,
+    144px 208px 0 #5c3a21,
+    160px 208px 0 #5c3a21;
+}
+
+/* O sol: 10 × 10 pixels de 14 px */
+.cover-sun .pixel {
+  top: -14px;
+  left: -14px;
+  width: 14px;
+  height: 14px;
+  box-shadow:
+    /* linha 1: ...SSSS... */
+    56px 14px 0 #f9c74f,
+    70px 14px 0 #f9c74f,
+    84px 14px 0 #f9c74f,
+    98px 14px 0 #f9c74f,
+    /* linha 2: .SSSSSSSS. */
+    28px 28px 0 #f9c74f,
+    42px 28px 0 #f9c74f,
+    56px 28px 0 #f9c74f,
+    70px 28px 0 #f9c74f,
+    84px 28px 0 #f9c74f,
+    98px 28px 0 #f9c74f,
+    112px 28px 0 #f9c74f,
+    126px 28px 0 #f9c74f,
+    /* linha 3: .SSSSSSSS. */
+    28px 42px 0 #f9c74f,
+    42px 42px 0 #f9c74f,
+    56px 42px 0 #f9c74f,
+    70px 42px 0 #f9c74f,
+    84px 42px 0 #f9c74f,
+    98px 42px 0 #f9c74f,
+    112px 42px 0 #f9c74f,
+    126px 42px 0 #f9c74f,
+    /* linha 4: SSSSSSSSSS */
+    14px 56px 0 #f9c74f,
+    28px 56px 0 #f9c74f,
+    42px 56px 0 #f9c74f,
+    56px 56px 0 #f9c74f,
+    70px 56px 0 #f9c74f,
+    84px 56px 0 #f9c74f,
+    98px 56px 0 #f9c74f,
+    112px 56px 0 #f9c74f,
+    126px 56px 0 #f9c74f,
+    140px 56px 0 #f9c74f,
+    /* linha 5: SSSSSSSSSS */
+    14px 70px 0 #f9c74f,
+    28px 70px 0 #f9c74f,
+    42px 70px 0 #f9c74f,
+    56px 70px 0 #f9c74f,
+    70px 70px 0 #f9c74f,
+    84px 70px 0 #f9c74f,
+    98px 70px 0 #f9c74f,
+    112px 70px 0 #f9c74f,
+    126px 70px 0 #f9c74f,
+    140px 70px 0 #f9c74f,
+    /* linha 6: SSSSSSSSSS */
+    14px 84px 0 #f9c74f,
+    28px 84px 0 #f9c74f,
+    42px 84px 0 #f9c74f,
+    56px 84px 0 #f9c74f,
+    70px 84px 0 #f9c74f,
+    84px 84px 0 #f9c74f,
+    98px 84px 0 #f9c74f,
+    112px 84px 0 #f9c74f,
+    126px 84px 0 #f9c74f,
+    140px 84px 0 #f9c74f,
+    /* linha 7: SSSSSSSSSS */
+    14px 98px 0 #f9c74f,
+    28px 98px 0 #f9c74f,
+    42px 98px 0 #f9c74f,
+    56px 98px 0 #f9c74f,
+    70px 98px 0 #f9c74f,
+    84px 98px 0 #f9c74f,
+    98px 98px 0 #f9c74f,
+    112px 98px 0 #f9c74f,
+    126px 98px 0 #f9c74f,
+    140px 98px 0 #f9c74f,
+    /* linha 8: .SSSSSSSS. */
+    28px 112px 0 #f9c74f,
+    42px 112px 0 #f9c74f,
+    56px 112px 0 #f9c74f,
+    70px 112px 0 #f9c74f,
+    84px 112px 0 #f9c74f,
+    98px 112px 0 #f9c74f,
+    112px 112px 0 #f9c74f,
+    126px 112px 0 #f9c74f,
+    /* linha 9: .SSSSSSSS. */
+    28px 126px 0 #f9c74f,
+    42px 126px 0 #f9c74f,
+    56px 126px 0 #f9c74f,
+    70px 126px 0 #f9c74f,
+    84px 126px 0 #f9c74f,
+    98px 126px 0 #f9c74f,
+    112px 126px 0 #f9c74f,
+    126px 126px 0 #f9c74f,
+    /* linha 10: ...SSSS... */
+    56px 140px 0 #f9c74f,
+    70px 140px 0 #f9c74f,
+    84px 140px 0 #f9c74f,
+    98px 140px 0 #f9c74f;
+}
+
+/* O mesmo Brotinho em três tamanhos: transform: scale amplia o desenho todo.
+   O scale não muda o espaço que o elemento ocupa; flex centraliza o sprite na caixa. */
+.cover-sprout,
+.sprite-frame,
+.store-art {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cover-sprout .sprout {
+  transform: scale(1.5);
+}
+
+.sprite-frame .sprout {
+  transform: scale(2);
+}
+
+.store-art .sprout {
+  transform: scale(0.75);
+}
+
+/* Topo da página da loja: margem negativa puxa a faixa até as bordas da caixa */
+.store-art {
+  height: 200px;
+  margin: -24px -24px 24px;
+  background-color: var(--color-paper-green);
+}
+
+/* Bordas pixeladas: quatro sombras sem desfoque, uma para cada lado.
+   Os cantos ficam vazios e a caixa parece desenhada com pixels. */
+.topics li {
+  box-shadow:
+    0 -4px 0 0 var(--color-sprout),
+    0 4px 0 0 var(--color-sprout),
+    -4px 0 0 0 var(--color-sprout),
+    4px 0 0 0 var(--color-sprout);
+}
+
+.game-card,
+.buy-button {
+  box-shadow:
+    0 -4px 0 0 var(--color-sun),
+    0 4px 0 0 var(--color-sun),
+    -4px 0 0 0 var(--color-sun),
+    4px 0 0 0 var(--color-sun);
+}
+
+.channel {
+  box-shadow:
+    0 -4px 0 0 var(--channel-color),
+    0 4px 0 0 var(--channel-color),
+    -4px 0 0 0 var(--channel-color),
+    4px 0 0 0 var(--channel-color);
+}
+
+.quote-lia {
+  box-shadow:
+    0 -4px 0 0 var(--color-orange),
+    0 4px 0 0 var(--color-orange),
+    -4px 0 0 0 var(--color-orange),
+    4px 0 0 0 var(--color-orange);
 }

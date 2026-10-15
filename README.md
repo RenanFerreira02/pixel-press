@@ -18,6 +18,7 @@ Para ver a página como ela estava em uma etapa, use `git log --oneline` e depoi
 - `05-grid-areas`: mosaico de depoimentos com `grid-template-areas`.
 - `06-grid-aninhado`: grids dentro do grid (regras, canais, passos, paleta e glossário) e `flex` nas barras simples.
 - `07-position`: sol, lugar do Brotinho e chão da capa com `position: absolute` dentro de `position: relative`.
+- `08-box-shadow`: o Brotinho e o sol em pixel art com `box-shadow`, ampliados com `transform: scale`, e as bordas pixeladas.
 
 ## Créditos
 
