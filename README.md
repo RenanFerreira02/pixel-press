@@ -2,6 +2,12 @@
 
 Página de estudo da Fase 1 do portfólio (HTML + CSS). É a primeira edição de uma zine de videogames que acompanha a criação de um pequeno jogo, o Brotinho, da ideia ao lançamento. Ela é construída etapa por etapa, um conceito por commit, para ser usada em aula.
 
+## No ar
+
+[pixel-press-renanferreira-dev.vercel.app](https://pixel-press-renanferreira-dev.vercel.app)
+
+![Print da página Pixel Press em tela de 1280 px](screenshot.png)
+
 ## Como abrir
 
 Não precisa instalar nada: abra o arquivo `index.html` no navegador.
