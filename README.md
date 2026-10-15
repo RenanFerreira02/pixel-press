@@ -13,6 +13,7 @@ Para ver a página como ela estava em uma etapa, use `git log --oneline` e depoi
 - `00-ponto-de-partida`: esqueleto do documento HTML.
 - `01-estrutura-editorial`: todo o conteúdo da revista em HTML semântico, ainda sem CSS.
 - `02-tipografia`: `style.css` com as fontes Press Start 2P e Atkinson Hyperlegible, escala de tamanhos, `line-height` e `letter-spacing`.
+- `03-paleta-com-variaveis`: cores em variáveis `--color-*`, contraste conferido e fundos alternados noite e papel.
 
 ## Créditos
 

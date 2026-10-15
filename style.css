@@ -1,3 +1,23 @@
+/* ===== Paleta =====
+   Cores que se repetem viram variáveis. Contraste com o fundo (mínimo 4,5:1):
+   papel na noite 16,2:1 · texto suave na noite 12,6:1 · rótulo na noite 9,1:1
+   rótulo no painel 8,0:1 · amarelo-sol na noite 11,8:1 · verde-broto na noite 10,2:1
+   laranja na noite 6,4:1 (no painel 5,6:1) · verde escuro no papel 5,6:1
+   texto suave no papel 8,1:1 · verde escuro no branco do quadro 6,2:1 */
+:root {
+  --color-night: #14111f;
+  --color-paper: #f4efe3;
+  --color-night-soft: #d8d2e3;
+  --color-night-label: #b9b3c7;
+  --color-panel: #221d33;
+  --color-sun: #f9c74f;
+  --color-sprout: #7bd389;
+  --color-orange: #f3722c;
+  --color-paper-green: #2d6a3e;
+  --color-paper-soft: #4a4458;
+  --color-board: #fffaf0;
+}
+
 /* ===== Tipografia ===== */
 
 /* Texto corrido: Atkinson Hyperlegible, uma fonte feita para ser fácil de ler */
@@ -135,4 +155,150 @@ pre {
 
 footer .logo {
   font-size: 24px;
+}
+
+/* ===== Cores ===== */
+
+/* Fundos alternados: os blocos da revista revezam entre noite e papel */
+.night {
+  background-color: var(--color-night);
+  color: var(--color-night-soft);
+}
+
+.paper {
+  background-color: var(--color-paper);
+  color: var(--color-night);
+}
+
+/* No escuro, o texto corrido é suave e os títulos são claros */
+.night h1,
+.night h2,
+.night h3,
+.night .dek,
+.night blockquote {
+  color: var(--color-paper);
+}
+
+.night .label {
+  color: var(--color-night-label);
+}
+
+.paper .label {
+  color: var(--color-paper-green);
+}
+
+/* Mesma especificidade de .night .label; como vem depois, estas vencem */
+.night .cover-kicker {
+  color: var(--color-sprout);
+}
+
+.night .tests-label {
+  color: var(--color-orange);
+}
+
+.logo {
+  color: var(--color-sun);
+}
+
+#idea .article-number {
+  color: var(--color-sprout);
+}
+
+#sound .article-number {
+  color: var(--color-sun);
+}
+
+.topics li {
+  background-color: var(--color-sprout);
+  color: var(--color-night);
+}
+
+/* Sumário: links na cor do texto, números em verde escuro */
+.toc a {
+  color: var(--color-night);
+}
+
+.toc-number {
+  color: var(--color-paper-green);
+}
+
+.paper figcaption,
+.code-note {
+  color: var(--color-paper-soft);
+}
+
+/* Painéis: um tom acima da noite, para destacar do fundo */
+.game-card,
+.channel,
+.quote-lia,
+.quote-antonio {
+  background-color: var(--color-panel);
+}
+
+/* Cada canal de som guarda a própria cor numa variável;
+   a onda (stroke="currentColor") e o título usam essa cor */
+.channel-pulse {
+  --channel-color: var(--color-sprout);
+}
+
+.channel-triangle {
+  --channel-color: var(--color-sun);
+}
+
+.channel-noise {
+  --channel-color: var(--color-orange);
+}
+
+.channel svg,
+.channel .label {
+  color: var(--channel-color);
+}
+
+/* Amostras da paleta do Brotinho: cada cor numa caixinha com altura */
+.swatch {
+  display: block;
+  height: 48px;
+}
+
+.swatch-leaf { background-color: #3fa34d; }
+.swatch-leaf-light { background-color: #7bd389; }
+.swatch-outline { background-color: #5c3a21; }
+.swatch-shell { background-color: #c98b4f; }
+.swatch-shell-light { background-color: #e3b07a; }
+.swatch-cheek { background-color: #f3722c; }
+.swatch-eyes { background-color: #1a1423; }
+.swatch-eye-shine { background-color: #fffaf0; }
+
+.loop-steps li {
+  background-color: var(--color-board);
+}
+
+pre {
+  background-color: var(--color-night);
+  color: var(--color-sprout);
+}
+
+/* O depoimento do Caio é o único com fundo claro: texto e nome escuros */
+.quote-caio {
+  background-color: var(--color-sun);
+}
+
+.quote-caio blockquote,
+.quote-caio .label {
+  color: var(--color-night);
+}
+
+/* A página da loja é escura, mesmo dentro de um bloco de papel */
+.store {
+  background-color: var(--color-night);
+  color: var(--color-paper);
+}
+
+.store-title {
+  color: var(--color-sun);
+}
+
+.buy-button {
+  background-color: var(--color-sun);
+  color: var(--color-night);
 }
