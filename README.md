@@ -16,6 +16,7 @@ Para ver a página como ela estava em uma etapa, use `git log --oneline` e depoi
 - `03-paleta-com-variaveis`: cores em variáveis `--color-*`, contraste conferido e fundos alternados noite e papel.
 - `04-grid-de-colunas`: grid de 12 colunas em todos os blocos, com `grid-column`, `margin`, `padding` e `border`.
 - `05-grid-areas`: mosaico de depoimentos com `grid-template-areas`.
+- `06-grid-aninhado`: grids dentro do grid (regras, canais, passos, paleta e glossário) e `flex` nas barras simples.
 
 ## Créditos
 
