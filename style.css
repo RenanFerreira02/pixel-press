@@ -996,3 +996,31 @@ footer .logo {
     linear-gradient(to bottom, #d9d2c3 2px, transparent 2px);
   background-size: 32px 32px;
 }
+
+/* ===== Hover e foco =====
+   :hover vale para o mouse; :focus-visible vale para quem navega com a tecla Tab.
+   Os dois recebem o mesmo destaque, e o foco ganha também um contorno bem visível. */
+
+.toc a:hover,
+.toc a:focus-visible {
+  color: var(--color-paper-green);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.toc a:focus-visible {
+  outline: 4px solid var(--color-night);
+  outline-offset: 4px;
+}
+
+.buy-button:hover,
+.buy-button:focus-visible {
+  background-color: var(--color-paper);
+}
+
+/* outline-offset de 8 px: o contorno passa por fora da borda pixelada de 4 px */
+.buy-button:focus-visible {
+  outline: 4px solid var(--color-paper);
+  outline-offset: 8px;
+}

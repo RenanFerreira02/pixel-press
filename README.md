@@ -20,6 +20,7 @@ Para ver a página como ela estava em uma etapa, use `git log --oneline` e depoi
 - `07-position`: sol, lugar do Brotinho e chão da capa com `position: absolute` dentro de `position: relative`.
 - `08-box-shadow`: o Brotinho e o sol em pixel art com `box-shadow`, ampliados com `transform: scale`, e as bordas pixeladas.
 - `09-gradientes`: scanlines na capa com `repeating-linear-gradient` e a grade de 32 px atrás do sprite com `linear-gradient`.
+- `10-hover-e-foco`: `:hover` e `:focus-visible` nos links do sumário e no botão COMPRAR, com contorno de foco bem visível.
 
 ## Créditos
 
