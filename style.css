@@ -645,3 +645,43 @@ footer .logo {
   flex-wrap: wrap;
   gap: 12px;
 }
+
+/* ===== Position =====
+   A capa é position: relative; os desenhos são position: absolute e se posicionam
+   em relação a ela. Eles saem do fluxo: o grid nem percebe que existem. */
+
+.cover {
+  position: relative;
+}
+
+/* Sol no canto superior direito. Por enquanto, um quadrado amarelo */
+.cover-sun {
+  position: absolute;
+  top: 136px;
+  right: 80px;
+  width: 140px;
+  height: 140px;
+  background-color: var(--color-sun);
+}
+
+/* Lugar do Brotinho, em pé sobre o chão (bottom: 80px, a altura do chão).
+   A borda tracejada só marca o espaço até o desenho chegar. */
+.cover-sprout {
+  position: absolute;
+  right: 163px;
+  bottom: 80px;
+  width: 288px;
+  height: 312px;
+  border: 4px dashed var(--color-sprout);
+}
+
+/* Chão na largura toda: left 0 e right 0 esticam a faixa de ponta a ponta */
+.cover-ground {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 80px;
+  border-top: 16px solid var(--color-sprout);
+  background-color: #3fa34d;
+}
