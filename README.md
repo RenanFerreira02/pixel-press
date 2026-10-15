@@ -12,10 +12,13 @@ Para ver a página como ela estava em uma etapa, use `git log --oneline` e depoi
 
 - `00-ponto-de-partida`: esqueleto do documento HTML.
 - `01-estrutura-editorial`: todo o conteúdo da revista em HTML semântico, ainda sem CSS.
+- `02-tipografia`: `style.css` com as fontes Press Start 2P e Atkinson Hyperlegible, escala de tamanhos, `line-height` e `letter-spacing`.
 
 ## Créditos
 
 Projeto educacional de Renan Ferreira. O Brotinho, sua equipe e seus testadores são fictícios.
+
+Fontes [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P) e [Atkinson Hyperlegible](https://fonts.google.com/specimen/Atkinson+Hyperlegible), do Google Fonts, sob a licença SIL Open Font License.
 
 ## Licença
 

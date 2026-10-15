@@ -1,0 +1,138 @@
+/* ===== Tipografia ===== */
+
+/* Texto corrido: Atkinson Hyperlegible, uma fonte feita para ser fácil de ler */
+body {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Press Start 2P, a fonte pixelada: só para logo, rótulos, números e destaques.
+   Ela tem um peso só (400); font-weight: 400 evita o negrito falso nos títulos. */
+h1,
+pre,
+.logo,
+.label,
+.article-number,
+.toc-number,
+.topics,
+.highlight-title,
+.quote-caio blockquote,
+.store-title,
+.store-price,
+.buy-button {
+  font-family: "Press Start 2P", monospace;
+  font-weight: 400;
+}
+
+/* Escala de tamanhos: do maior (120 px) ao menor (12 px) */
+h1 {
+  font-size: 60px;
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.logo {
+  font-size: 40px;
+  line-height: 1;
+}
+
+.label {
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+}
+
+/* Linha fina: o texto curto que vem logo depois do título */
+.dek {
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.article-number {
+  font-size: 120px;
+  line-height: 1;
+}
+
+.topics {
+  font-size: 12px;
+}
+
+.toc a {
+  text-decoration: none;
+}
+
+.toc-number {
+  font-size: 14px;
+}
+
+.editorial h2 {
+  font-size: 44px;
+}
+
+.signature,
+dt {
+  font-weight: 700;
+}
+
+figcaption,
+code,
+footer p {
+  font-size: 16px;
+}
+
+.highlight-title {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+pre {
+  font-size: 14px;
+  line-height: 2;
+}
+
+/* Depoimentos: cada um com um tamanho, como num mosaico de revista */
+.quote-lia blockquote {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.quote-caio blockquote {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.quote-bia blockquote,
+.quote-antonio blockquote {
+  font-size: 22px;
+  line-height: 1.45;
+}
+
+.store-title {
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+.store-price,
+.buy-button {
+  font-size: 16px;
+}
+
+.buy-button {
+  text-decoration: none;
+}
+
+footer .logo {
+  font-size: 24px;
+}
