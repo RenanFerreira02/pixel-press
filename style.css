@@ -967,3 +967,32 @@ footer .logo {
     -4px 0 0 0 var(--color-orange),
     4px 0 0 0 var(--color-orange);
 }
+
+/* ===== Gradientes ===== */
+
+/* Scanlines: faixas de 2 px que alternam transparente e preto a 22%.
+   repeating-linear-gradient repete o padrão até cobrir a capa toda.
+   A camada vem por último no HTML, então fica por cima de tudo;
+   pointer-events: none deixa o mouse "atravessar" a camada. */
+.cover-scanlines {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 2px,
+    rgba(0, 0, 0, 0.22) 2px,
+    rgba(0, 0, 0, 0.22) 4px
+  );
+  pointer-events: none;
+}
+
+/* Grade de 32 px atrás do sprite: dois gradientes, um de linhas verticais
+   e outro de linhas horizontais. Cada um pinta 2 px de linha e o resto transparente,
+   e background-size repete o desenho a cada 32 px: um quadrado = um pixel do jogo. */
+.sprite-frame {
+  background-image:
+    linear-gradient(to right, #d9d2c3 2px, transparent 2px),
+    linear-gradient(to bottom, #d9d2c3 2px, transparent 2px);
+  background-size: 32px 32px;
+}
