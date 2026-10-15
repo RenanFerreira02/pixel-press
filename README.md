@@ -21,10 +21,17 @@ Para ver a página como ela estava em uma etapa, use `git log --oneline` e depoi
 - `08-box-shadow`: o Brotinho e o sol em pixel art com `box-shadow`, ampliados com `transform: scale`, e as bordas pixeladas.
 - `09-gradientes`: scanlines na capa com `repeating-linear-gradient` e a grade de 32 px atrás do sprite com `linear-gradient`.
 - `10-hover-e-foco`: `:hover` e `:focus-visible` nos links do sumário e no botão COMPRAR, com contorno de foco bem visível.
+- `11-css-nesting`: o `style.css` reescrito com CSS nesting nativo, com o mesmo resultado visual.
+
+## Navegadores
+
+A página foi feita para telas de computador, a partir de 1280 px de largura. A versão para celular fica para depois.
+
+A partir da etapa `11-css-nesting`, o `style.css` usa CSS nesting nativo, suportado no Chrome 120+, Firefox 117+ e Safari 17.2+. Em navegadores mais antigos, as regras aninhadas são ignoradas e a página perde parte do estilo.
 
 ## Créditos
 
-Projeto educacional de Renan Ferreira. O Brotinho, sua equipe e seus testadores são fictícios.
+Projeto educacional de Renan Ferreira. O Brotinho, sua equipe e seus testadores são fictícios. Não há imagens externas: toda a arte, incluindo o Brotinho e o sol, foi feita com CSS.
 
 Fontes [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P) e [Atkinson Hyperlegible](https://fonts.google.com/specimen/Atkinson+Hyperlegible), do Google Fonts, sob a licença SIL Open Font License.
 

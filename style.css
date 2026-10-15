@@ -1,3 +1,7 @@
+/* Este arquivo usa CSS nesting nativo: regras dentro de regras.
+   Suporte: Chrome 120+, Firefox 117+ e Safari 17.2+.
+   Em navegadores mais antigos, as regras aninhadas são ignoradas. */
+
 /* ===== Paleta =====
    Cores que se repetem viram variáveis. Contraste com o fundo (mínimo 4,5:1):
    papel na noite 16,2:1 · texto suave na noite 12,6:1 · rótulo na noite 9,1:1
@@ -18,300 +22,19 @@
   --color-board: #fffaf0;
 }
 
-/* ===== Tipografia ===== */
-
-/* Texto corrido: Atkinson Hyperlegible, uma fonte feita para ser fácil de ler */
-body {
-  font-family: "Atkinson Hyperlegible", sans-serif;
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-/* Press Start 2P, a fonte pixelada: só para logo, rótulos, números e destaques.
-   Ela tem um peso só (400); font-weight: 400 evita o negrito falso nos títulos. */
-h1,
-pre,
-.logo,
-.label,
-.article-number,
-.toc-number,
-.topics,
-.highlight-title,
-.quote-caio blockquote,
-.store-title,
-.store-price,
-.buy-button {
-  font-family: "Press Start 2P", monospace;
-  font-weight: 400;
-}
-
-/* Escala de tamanhos: do maior (120 px) ao menor (12 px) */
-h1 {
-  font-size: 60px;
-  line-height: 1.25;
-}
-
-h2 {
-  font-size: 48px;
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-}
-
-h3 {
-  font-size: 20px;
-  line-height: 1.3;
-}
-
-.logo {
-  font-size: 40px;
-  line-height: 1;
-}
-
-.label {
-  font-size: 12px;
-  line-height: 1.6;
-  letter-spacing: 0.08em;
-}
-
-/* Linha fina: o texto curto que vem logo depois do título */
-.dek {
-  font-size: 22px;
-  line-height: 1.5;
-}
-
-.article-number {
-  font-size: 120px;
-  line-height: 1;
-}
-
-.topics {
-  font-size: 12px;
-}
-
-.toc a {
-  text-decoration: none;
-}
-
-.toc-number {
-  font-size: 14px;
-}
-
-.editorial h2 {
-  font-size: 44px;
-}
-
-.signature,
-dt {
-  font-weight: 700;
-}
-
-figcaption,
-code,
-footer p {
-  font-size: 16px;
-}
-
-.highlight-title {
-  font-size: 20px;
-  line-height: 1.6;
-}
-
-pre {
-  font-size: 14px;
-  line-height: 2;
-}
-
-/* Depoimentos: cada um com um tamanho, como num mosaico de revista */
-.quote-lia blockquote {
-  font-size: 26px;
-  font-weight: 700;
-  line-height: 1.35;
-}
-
-.quote-caio blockquote {
-  font-size: 18px;
-  line-height: 1.8;
-}
-
-.quote-bia blockquote,
-.quote-antonio blockquote {
-  font-size: 22px;
-  line-height: 1.45;
-}
-
-.store-title {
-  font-size: 24px;
-  line-height: 1.3;
-}
-
-.store-price,
-.buy-button {
-  font-size: 16px;
-}
-
-.buy-button {
-  text-decoration: none;
-}
-
-footer .logo {
-  font-size: 24px;
-}
-
-/* ===== Cores ===== */
-
-/* Fundos alternados: os blocos da revista revezam entre noite e papel */
-.night {
-  background-color: var(--color-night);
-  color: var(--color-night-soft);
-}
-
-.paper {
-  background-color: var(--color-paper);
-  color: var(--color-night);
-}
-
-/* No escuro, o texto corrido é suave e os títulos são claros */
-.night h1,
-.night h2,
-.night h3,
-.night .dek,
-.night blockquote {
-  color: var(--color-paper);
-}
-
-.night .label {
-  color: var(--color-night-label);
-}
-
-.paper .label {
-  color: var(--color-paper-green);
-}
-
-/* Mesma especificidade de .night .label; como vem depois, estas vencem */
-.night .cover-kicker {
-  color: var(--color-sprout);
-}
-
-.night .tests-label {
-  color: var(--color-orange);
-}
-
-.logo {
-  color: var(--color-sun);
-}
-
-#idea .article-number {
-  color: var(--color-sprout);
-}
-
-#sound .article-number {
-  color: var(--color-sun);
-}
-
-.topics li {
-  background-color: var(--color-sprout);
-  color: var(--color-night);
-}
-
-/* Sumário: links na cor do texto, números em verde escuro */
-.toc a {
-  color: var(--color-night);
-}
-
-.toc-number {
-  color: var(--color-paper-green);
-}
-
-.paper figcaption,
-.code-note {
-  color: var(--color-paper-soft);
-}
-
-/* Painéis: um tom acima da noite, para destacar do fundo */
-.game-card,
-.channel,
-.quote-lia,
-.quote-antonio {
-  background-color: var(--color-panel);
-}
-
-/* Cada canal de som guarda a própria cor numa variável;
-   a onda (stroke="currentColor") e o título usam essa cor */
-.channel-pulse {
-  --channel-color: var(--color-sprout);
-}
-
-.channel-triangle {
-  --channel-color: var(--color-sun);
-}
-
-.channel-noise {
-  --channel-color: var(--color-orange);
-}
-
-.channel svg,
-.channel .label {
-  color: var(--channel-color);
-}
-
-/* Amostras da paleta do Brotinho: cada cor numa caixinha com altura */
-.swatch {
-  display: block;
-  height: 48px;
-}
-
-.swatch-leaf { background-color: #3fa34d; }
-.swatch-leaf-light { background-color: #7bd389; }
-.swatch-outline { background-color: #5c3a21; }
-.swatch-shell { background-color: #c98b4f; }
-.swatch-shell-light { background-color: #e3b07a; }
-.swatch-cheek { background-color: #f3722c; }
-.swatch-eyes { background-color: #1a1423; }
-.swatch-eye-shine { background-color: #fffaf0; }
-
-.loop-steps li {
-  background-color: var(--color-board);
-}
-
-pre {
-  background-color: var(--color-night);
-  color: var(--color-sprout);
-}
-
-/* O depoimento do Caio é o único com fundo claro: texto e nome escuros */
-.quote-caio {
-  background-color: var(--color-sun);
-}
-
-.quote-caio blockquote,
-.quote-caio .label {
-  color: var(--color-night);
-}
-
-/* A página da loja é escura, mesmo dentro de um bloco de papel */
-.store {
-  background-color: var(--color-night);
-  color: var(--color-paper);
-}
-
-.store-title {
-  color: var(--color-sun);
-}
-
-.buy-button {
-  background-color: var(--color-sun);
-  color: var(--color-night);
-}
-
-/* ===== Box model ===== */
+/* ===== Base ===== */
 
 /* width e height passam a contar padding e borda */
 * {
   box-sizing: border-box;
 }
 
+/* Texto corrido: Atkinson Hyperlegible, uma fonte feita para ser fácil de ler */
 body {
   margin: 0;
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 /* Troca as margens do navegador por um espaço só embaixo, de 16 px */
@@ -334,26 +57,112 @@ pre {
   margin-bottom: 0;
 }
 
+/* Press Start 2P, a fonte pixelada: só para logo, rótulos, números e destaques.
+   Ela tem um peso só (400); font-weight: 400 evita o negrito falso nos títulos. */
 h1,
-h2,
+pre,
+.logo,
+.label,
+.article-number,
+.toc-number,
+.topics,
+.highlight-title,
+.quote-caio blockquote,
+.store-title,
+.store-price,
+.buy-button {
+  font-family: "Press Start 2P", monospace;
+  font-weight: 400;
+}
+
+/* Escala de tamanhos: do maior (120 px) ao menor (12 px) */
+h1 {
+  margin-bottom: 24px;
+  font-size: 60px;
+  line-height: 1.25;
+}
+
+h2 {
+  margin-bottom: 24px;
+  font-size: 48px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+/* Linha fina: o texto curto que vem logo depois do título */
 .dek {
   margin-bottom: 24px;
+  font-size: 22px;
+  line-height: 1.5;
 }
 
-/* Listas que viram caixas não precisam de marcador nem de recuo */
-.topics,
-.toc ol,
-.rules,
-.palette,
-.channels,
-.loop-steps {
-  padding: 0;
-  list-style: none;
+.label {
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
 }
 
-/* ===== Grid de 12 colunas ===== */
+.logo {
+  font-size: 40px;
+  line-height: 1;
+  color: var(--color-sun);
+}
 
-/* Todo bloco da revista: 12 colunas iguais, 24 px entre colunas e 48 px entre linhas.
+.article-number {
+  font-size: 120px;
+  line-height: 1;
+}
+
+figcaption,
+code {
+  font-size: 16px;
+}
+
+dt {
+  font-weight: 700;
+}
+
+/* ===== Fundos alternados: os blocos da revista revezam entre noite e papel ===== */
+
+/* Sem &, a regra de dentro vira seletor descendente: h2 dentro de .night é .night h2 */
+.night {
+  background-color: var(--color-night);
+  color: var(--color-night-soft);
+
+  /* No escuro, o texto corrido é suave e os títulos são claros */
+  h1,
+  h2,
+  h3,
+  .dek,
+  blockquote {
+    color: var(--color-paper);
+  }
+
+  .label {
+    color: var(--color-night-label);
+  }
+}
+
+.paper {
+  background-color: var(--color-paper);
+  color: var(--color-night);
+
+  .label {
+    color: var(--color-paper-green);
+  }
+
+  figcaption {
+    color: var(--color-paper-soft);
+  }
+}
+
+/* ===== Grid de 12 colunas =====
+   Todo bloco da revista: 12 colunas iguais, 24 px entre colunas e 48 px entre linhas.
    minmax(0, 1fr) impede que um conteúdo largo estique a coluna. */
 .block {
   display: grid;
@@ -362,314 +171,191 @@ h2,
   padding: 96px 80px;
 }
 
-/* Capa */
-.cover {
-  min-height: 820px;
-  padding-top: 40px;
-  align-content: start;
-}
-
-.cover-bar {
-  grid-column: 1 / -1;
-  padding-bottom: 24px;
-  border-bottom: 4px solid var(--color-sun);
-}
-
-.cover-intro {
-  grid-column: 1 / 8;
-}
-
-.cover-intro .dek {
-  margin-bottom: 32px;
-}
-
-.topics li {
-  padding: 8px 12px;
-}
-
-/* Sumário e editorial */
-.toc {
-  grid-column: 1 / 5;
-  padding-right: 24px;
-  border-right: 4px solid var(--color-night);
-}
-
-.toc li {
-  margin-bottom: 16px;
-}
-
-.toc-number {
-  margin-right: 8px;
-}
-
-.editorial {
-  grid-column: 6 / 13;
-}
-
-/* columns divide o texto em colunas, como numa revista impressa */
-.editorial-text {
-  columns: 2;
-  column-gap: 24px;
-  margin-bottom: 24px;
-}
-
-/* 01 · A ideia */
+/* Número grande e rótulo das matérias 01 e 03 */
 .article-marker {
   grid-column: 1 / 4;
 }
 
-#idea .article-body {
-  grid-column: 4 / 9;
+/* ===== Capa =====
+   A capa é position: relative; os desenhos são position: absolute e se posicionam
+   em relação a ela. Eles saem do fluxo: o grid nem percebe que existem. */
+.cover {
+  position: relative;
+  min-height: 820px;
+  padding-top: 40px;
+  align-content: start;
+
+  /* Mesma especificidade de .night .label; como vem depois, vence */
+  .cover-kicker {
+    color: var(--color-sprout);
+  }
 }
 
-.game-card {
-  grid-column: 10 / 13;
-  align-self: start;
-  padding: 24px;
-}
-
-.game-card div {
-  margin-bottom: 12px;
-}
-
-.rules {
-  grid-column: 4 / 13;
-}
-
-.rules li {
-  padding-top: 16px;
-  border-top: 4px solid var(--color-sprout);
-}
-
-/* 02 · Pixel art: quadro de 448 × 480 px mais 4 px de borda de cada lado */
-.sprite-figure {
-  grid-column: 1 / 7;
-}
-
-.sprite-frame {
-  width: 456px;
-  height: 488px;
-  margin-bottom: 16px;
-  border: 4px solid var(--color-night);
-  background-color: var(--color-board);
-}
-
-#pixel-art .article-body {
-  grid-column: 7 / 13;
-}
-
-.swatch {
-  margin-bottom: 8px;
-  border: 4px solid var(--color-night);
-}
-
-/* 03 · Som */
-#sound .article-body {
-  grid-column: 4 / 11;
-}
-
-.channels {
-  grid-column: 1 / -1;
-}
-
-.channel {
-  padding: 24px;
-}
-
-.channel svg {
-  display: block;
-  margin-bottom: 16px;
-}
-
-/* 04 · Código */
-#code .article-body {
-  grid-column: 1 / 8;
-}
-
-.highlight {
-  grid-column: 9 / 13;
-  align-self: start;
-  padding: 24px 0;
-  border-top: 4px solid var(--color-night);
-  border-bottom: 4px solid var(--color-night);
-}
-
-.loop-steps {
-  grid-column: 1 / -1;
-}
-
-.loop-steps li {
-  padding: 24px;
-  border: 4px solid var(--color-night);
-}
-
-pre {
-  grid-column: 1 / 7;
-  padding: 24px 32px;
-}
-
-.code-note {
-  grid-column: 7 / 12;
-  align-self: center;
-}
-
-/* 05 · Testes: um mosaico desenhado com nomes.
-   Cada nome repetido ocupa mais colunas; o mesmo nome em duas linhas ocupa as duas. */
-#tests {
-  grid-template-areas:
-    "intro intro intro intro intro lia lia lia lia caio caio caio"
-    "bia bia bia bia antonio antonio antonio antonio antonio caio caio caio"
-    "bia bia bia bia changes changes changes changes changes changes changes changes";
-  row-gap: 24px;
-}
-
-#tests .article-body {
-  grid-area: intro;
-}
-
-.quote {
-  padding: 32px;
-}
-
-.quote-lia {
-  grid-area: lia;
-}
-
-.quote-caio {
-  grid-area: caio;
-}
-
-.quote-bia {
-  grid-area: bia;
-  border: 4px solid var(--color-sprout);
-}
-
-.quote-antonio {
-  grid-area: antonio;
-}
-
-.tests-changes {
-  grid-area: changes;
-  padding-top: 24px;
-  border-top: 4px solid var(--color-orange);
-}
-
-.tests-changes ul {
-  padding-left: 24px;
-}
-
-.tests-changes li {
-  margin-bottom: 8px;
-}
-
-/* 06 · Lançamento */
-#launch .article-body {
-  grid-column: 1 / 8;
-}
-
-.store {
-  grid-column: 9 / 13;
-  align-self: start;
-  padding: 24px;
-}
-
-.store-price {
-  margin-bottom: 24px;
-}
-
-.buy-button {
-  display: inline-block;
-  padding: 16px 24px;
-}
-
-.glossary {
-  grid-column: 1 / -1;
-  padding-top: 32px;
-  border-top: 4px solid var(--color-night);
-}
-
-/* Expediente */
-footer {
-  border-top: 4px solid var(--color-sun);
-}
-
-footer .logo {
-  grid-column: 1 / 5;
-}
-
-.footer-text {
-  grid-column: 5 / 13;
-}
-
-/* ===== Grids aninhados e flex =====
-   Um item do grid da página também pode ser um grid. O gap substitui as margens entre os itens. */
-
-.rules {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.channels,
-.loop-steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-
-.palette {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px 16px;
-}
-
-.glossary dl {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px 32px;
-}
-
-/* Barras simples, numa linha só: flex resolve */
+/* Barra simples, numa linha só: flex resolve */
 .cover-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  grid-column: 1 / -1;
+  padding-bottom: 24px;
+  border-bottom: 4px solid var(--color-sun);
+
+  .logo {
+    margin-bottom: 0;
+  }
 }
 
-.cover-bar .logo {
-  margin-bottom: 0;
+.cover-intro {
+  grid-column: 1 / 8;
+
+  .dek {
+    margin-bottom: 32px;
+  }
 }
 
+/* Temas da edição. Bordas pixeladas: quatro sombras sem desfoque, uma para cada lado;
+   os cantos ficam vazios e a caixa parece desenhada com pixels. */
 .topics {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  padding: 0;
+  font-size: 12px;
+  list-style: none;
+
+  li {
+    padding: 8px 12px;
+    background-color: var(--color-sprout);
+    color: var(--color-night);
+    box-shadow:
+      0 -4px 0 0 var(--color-sprout),
+      0 4px 0 0 var(--color-sprout),
+      -4px 0 0 0 var(--color-sprout),
+      4px 0 0 0 var(--color-sprout);
+  }
 }
 
-/* ===== Position =====
-   A capa é position: relative; os desenhos são position: absolute e se posicionam
-   em relação a ela. Eles saem do fluxo: o grid nem percebe que existem. */
-
-.cover {
-  position: relative;
-}
-
-/* Sol no canto superior direito */
+/* Sol no canto superior direito: 10 × 10 pixels de 14 px */
 .cover-sun {
   position: absolute;
   top: 136px;
   right: 80px;
   width: 140px;
   height: 140px;
+
+  .pixel {
+    top: -14px;
+    left: -14px;
+    width: 14px;
+    height: 14px;
+    box-shadow:
+      /* linha 1: ...SSSS... */
+      56px 14px 0 #f9c74f,
+      70px 14px 0 #f9c74f,
+      84px 14px 0 #f9c74f,
+      98px 14px 0 #f9c74f,
+      /* linha 2: .SSSSSSSS. */
+      28px 28px 0 #f9c74f,
+      42px 28px 0 #f9c74f,
+      56px 28px 0 #f9c74f,
+      70px 28px 0 #f9c74f,
+      84px 28px 0 #f9c74f,
+      98px 28px 0 #f9c74f,
+      112px 28px 0 #f9c74f,
+      126px 28px 0 #f9c74f,
+      /* linha 3: .SSSSSSSS. */
+      28px 42px 0 #f9c74f,
+      42px 42px 0 #f9c74f,
+      56px 42px 0 #f9c74f,
+      70px 42px 0 #f9c74f,
+      84px 42px 0 #f9c74f,
+      98px 42px 0 #f9c74f,
+      112px 42px 0 #f9c74f,
+      126px 42px 0 #f9c74f,
+      /* linha 4: SSSSSSSSSS */
+      14px 56px 0 #f9c74f,
+      28px 56px 0 #f9c74f,
+      42px 56px 0 #f9c74f,
+      56px 56px 0 #f9c74f,
+      70px 56px 0 #f9c74f,
+      84px 56px 0 #f9c74f,
+      98px 56px 0 #f9c74f,
+      112px 56px 0 #f9c74f,
+      126px 56px 0 #f9c74f,
+      140px 56px 0 #f9c74f,
+      /* linha 5: SSSSSSSSSS */
+      14px 70px 0 #f9c74f,
+      28px 70px 0 #f9c74f,
+      42px 70px 0 #f9c74f,
+      56px 70px 0 #f9c74f,
+      70px 70px 0 #f9c74f,
+      84px 70px 0 #f9c74f,
+      98px 70px 0 #f9c74f,
+      112px 70px 0 #f9c74f,
+      126px 70px 0 #f9c74f,
+      140px 70px 0 #f9c74f,
+      /* linha 6: SSSSSSSSSS */
+      14px 84px 0 #f9c74f,
+      28px 84px 0 #f9c74f,
+      42px 84px 0 #f9c74f,
+      56px 84px 0 #f9c74f,
+      70px 84px 0 #f9c74f,
+      84px 84px 0 #f9c74f,
+      98px 84px 0 #f9c74f,
+      112px 84px 0 #f9c74f,
+      126px 84px 0 #f9c74f,
+      140px 84px 0 #f9c74f,
+      /* linha 7: SSSSSSSSSS */
+      14px 98px 0 #f9c74f,
+      28px 98px 0 #f9c74f,
+      42px 98px 0 #f9c74f,
+      56px 98px 0 #f9c74f,
+      70px 98px 0 #f9c74f,
+      84px 98px 0 #f9c74f,
+      98px 98px 0 #f9c74f,
+      112px 98px 0 #f9c74f,
+      126px 98px 0 #f9c74f,
+      140px 98px 0 #f9c74f,
+      /* linha 8: .SSSSSSSS. */
+      28px 112px 0 #f9c74f,
+      42px 112px 0 #f9c74f,
+      56px 112px 0 #f9c74f,
+      70px 112px 0 #f9c74f,
+      84px 112px 0 #f9c74f,
+      98px 112px 0 #f9c74f,
+      112px 112px 0 #f9c74f,
+      126px 112px 0 #f9c74f,
+      /* linha 9: .SSSSSSSS. */
+      28px 126px 0 #f9c74f,
+      42px 126px 0 #f9c74f,
+      56px 126px 0 #f9c74f,
+      70px 126px 0 #f9c74f,
+      84px 126px 0 #f9c74f,
+      98px 126px 0 #f9c74f,
+      112px 126px 0 #f9c74f,
+      126px 126px 0 #f9c74f,
+      /* linha 10: ...SSSS... */
+      56px 140px 0 #f9c74f,
+      70px 140px 0 #f9c74f,
+      84px 140px 0 #f9c74f,
+      98px 140px 0 #f9c74f;
+  }
 }
 
-/* Brotinho em pé sobre o chão (bottom: 80px, a altura do chão) */
+/* Brotinho em pé sobre o chão (bottom: 80px, a altura do chão), ampliado 1,5x */
 .cover-sprout {
   position: absolute;
   right: 163px;
   bottom: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 288px;
   height: 312px;
+
+  .sprout {
+    transform: scale(1.5);
+  }
 }
 
 /* Chão na largura toda: left 0 e right 0 esticam a faixa de ponta a ponta */
@@ -682,293 +368,6 @@ footer .logo {
   border-top: 16px solid var(--color-sprout);
   background-color: #3fa34d;
 }
-
-/* ===== Pixel art com box-shadow =====
-   Cada sombra "x y 0 cor" é uma cópia do elemento, sem desfoque, deslocada x para a
-   direita e y para baixo. Um elemento do tamanho de um pixel + uma sombra por pixel = um desenho.
-   A sombra não aparece embaixo do próprio elemento; por isso ele fica um pixel para fora
-   (top e left negativos) e as sombras começam em 1 pixel. */
-
-.pixel {
-  position: absolute;
-}
-
-/* O Brotinho: 12 × 13 pixels de 16 px = 192 × 208 px */
-.sprout {
-  position: relative;
-  width: 192px;
-  height: 208px;
-}
-
-.sprout .pixel {
-  top: -16px;
-  left: -16px;
-  width: 16px;
-  height: 16px;
-  box-shadow:
-    /* linha 1: ....GG..GG.. */
-    80px 16px 0 #3fa34d,
-    96px 16px 0 #3fa34d,
-    144px 16px 0 #3fa34d,
-    160px 16px 0 #3fa34d,
-    /* linha 2: ...GLLGGLLG. */
-    64px 32px 0 #3fa34d,
-    80px 32px 0 #7bd389,
-    96px 32px 0 #7bd389,
-    112px 32px 0 #3fa34d,
-    128px 32px 0 #3fa34d,
-    144px 32px 0 #7bd389,
-    160px 32px 0 #7bd389,
-    176px 32px 0 #3fa34d,
-    /* linha 3: ....GLGGLG.. */
-    80px 48px 0 #3fa34d,
-    96px 48px 0 #7bd389,
-    112px 48px 0 #3fa34d,
-    128px 48px 0 #3fa34d,
-    144px 48px 0 #7bd389,
-    160px 48px 0 #3fa34d,
-    /* linha 4: .....GGGG... */
-    96px 64px 0 #3fa34d,
-    112px 64px 0 #3fa34d,
-    128px 64px 0 #3fa34d,
-    144px 64px 0 #3fa34d,
-    /* linha 5: ......GG.... */
-    112px 80px 0 #3fa34d,
-    128px 80px 0 #3fa34d,
-    /* linha 6: ......GG.... */
-    112px 96px 0 #3fa34d,
-    128px 96px 0 #3fa34d,
-    /* linha 7: ....BBBBBB.. */
-    80px 112px 0 #5c3a21,
-    96px 112px 0 #5c3a21,
-    112px 112px 0 #5c3a21,
-    128px 112px 0 #5c3a21,
-    144px 112px 0 #5c3a21,
-    160px 112px 0 #5c3a21,
-    /* linha 8: ...BHYYYYYB. */
-    64px 128px 0 #5c3a21,
-    80px 128px 0 #e3b07a,
-    96px 128px 0 #c98b4f,
-    112px 128px 0 #c98b4f,
-    128px 128px 0 #c98b4f,
-    144px 128px 0 #c98b4f,
-    160px 128px 0 #c98b4f,
-    176px 128px 0 #5c3a21,
-    /* linha 9: ..BHYWKYWKYB */
-    48px 144px 0 #5c3a21,
-    64px 144px 0 #e3b07a,
-    80px 144px 0 #c98b4f,
-    96px 144px 0 #fffaf0,
-    112px 144px 0 #1a1423,
-    128px 144px 0 #c98b4f,
-    144px 144px 0 #fffaf0,
-    160px 144px 0 #1a1423,
-    176px 144px 0 #c98b4f,
-    192px 144px 0 #5c3a21,
-    /* linha 10: ..BYYYYYYYYB */
-    48px 160px 0 #5c3a21,
-    64px 160px 0 #c98b4f,
-    80px 160px 0 #c98b4f,
-    96px 160px 0 #c98b4f,
-    112px 160px 0 #c98b4f,
-    128px 160px 0 #c98b4f,
-    144px 160px 0 #c98b4f,
-    160px 160px 0 #c98b4f,
-    176px 160px 0 #c98b4f,
-    192px 160px 0 #5c3a21,
-    /* linha 11: ..BYYYOOYYYB */
-    48px 176px 0 #5c3a21,
-    64px 176px 0 #c98b4f,
-    80px 176px 0 #c98b4f,
-    96px 176px 0 #c98b4f,
-    112px 176px 0 #f3722c,
-    128px 176px 0 #f3722c,
-    144px 176px 0 #c98b4f,
-    160px 176px 0 #c98b4f,
-    176px 176px 0 #c98b4f,
-    192px 176px 0 #5c3a21,
-    /* linha 12: ...BYYYYYYB. */
-    64px 192px 0 #5c3a21,
-    80px 192px 0 #c98b4f,
-    96px 192px 0 #c98b4f,
-    112px 192px 0 #c98b4f,
-    128px 192px 0 #c98b4f,
-    144px 192px 0 #c98b4f,
-    160px 192px 0 #c98b4f,
-    176px 192px 0 #5c3a21,
-    /* linha 13: ....BBBBBB.. */
-    80px 208px 0 #5c3a21,
-    96px 208px 0 #5c3a21,
-    112px 208px 0 #5c3a21,
-    128px 208px 0 #5c3a21,
-    144px 208px 0 #5c3a21,
-    160px 208px 0 #5c3a21;
-}
-
-/* O sol: 10 × 10 pixels de 14 px */
-.cover-sun .pixel {
-  top: -14px;
-  left: -14px;
-  width: 14px;
-  height: 14px;
-  box-shadow:
-    /* linha 1: ...SSSS... */
-    56px 14px 0 #f9c74f,
-    70px 14px 0 #f9c74f,
-    84px 14px 0 #f9c74f,
-    98px 14px 0 #f9c74f,
-    /* linha 2: .SSSSSSSS. */
-    28px 28px 0 #f9c74f,
-    42px 28px 0 #f9c74f,
-    56px 28px 0 #f9c74f,
-    70px 28px 0 #f9c74f,
-    84px 28px 0 #f9c74f,
-    98px 28px 0 #f9c74f,
-    112px 28px 0 #f9c74f,
-    126px 28px 0 #f9c74f,
-    /* linha 3: .SSSSSSSS. */
-    28px 42px 0 #f9c74f,
-    42px 42px 0 #f9c74f,
-    56px 42px 0 #f9c74f,
-    70px 42px 0 #f9c74f,
-    84px 42px 0 #f9c74f,
-    98px 42px 0 #f9c74f,
-    112px 42px 0 #f9c74f,
-    126px 42px 0 #f9c74f,
-    /* linha 4: SSSSSSSSSS */
-    14px 56px 0 #f9c74f,
-    28px 56px 0 #f9c74f,
-    42px 56px 0 #f9c74f,
-    56px 56px 0 #f9c74f,
-    70px 56px 0 #f9c74f,
-    84px 56px 0 #f9c74f,
-    98px 56px 0 #f9c74f,
-    112px 56px 0 #f9c74f,
-    126px 56px 0 #f9c74f,
-    140px 56px 0 #f9c74f,
-    /* linha 5: SSSSSSSSSS */
-    14px 70px 0 #f9c74f,
-    28px 70px 0 #f9c74f,
-    42px 70px 0 #f9c74f,
-    56px 70px 0 #f9c74f,
-    70px 70px 0 #f9c74f,
-    84px 70px 0 #f9c74f,
-    98px 70px 0 #f9c74f,
-    112px 70px 0 #f9c74f,
-    126px 70px 0 #f9c74f,
-    140px 70px 0 #f9c74f,
-    /* linha 6: SSSSSSSSSS */
-    14px 84px 0 #f9c74f,
-    28px 84px 0 #f9c74f,
-    42px 84px 0 #f9c74f,
-    56px 84px 0 #f9c74f,
-    70px 84px 0 #f9c74f,
-    84px 84px 0 #f9c74f,
-    98px 84px 0 #f9c74f,
-    112px 84px 0 #f9c74f,
-    126px 84px 0 #f9c74f,
-    140px 84px 0 #f9c74f,
-    /* linha 7: SSSSSSSSSS */
-    14px 98px 0 #f9c74f,
-    28px 98px 0 #f9c74f,
-    42px 98px 0 #f9c74f,
-    56px 98px 0 #f9c74f,
-    70px 98px 0 #f9c74f,
-    84px 98px 0 #f9c74f,
-    98px 98px 0 #f9c74f,
-    112px 98px 0 #f9c74f,
-    126px 98px 0 #f9c74f,
-    140px 98px 0 #f9c74f,
-    /* linha 8: .SSSSSSSS. */
-    28px 112px 0 #f9c74f,
-    42px 112px 0 #f9c74f,
-    56px 112px 0 #f9c74f,
-    70px 112px 0 #f9c74f,
-    84px 112px 0 #f9c74f,
-    98px 112px 0 #f9c74f,
-    112px 112px 0 #f9c74f,
-    126px 112px 0 #f9c74f,
-    /* linha 9: .SSSSSSSS. */
-    28px 126px 0 #f9c74f,
-    42px 126px 0 #f9c74f,
-    56px 126px 0 #f9c74f,
-    70px 126px 0 #f9c74f,
-    84px 126px 0 #f9c74f,
-    98px 126px 0 #f9c74f,
-    112px 126px 0 #f9c74f,
-    126px 126px 0 #f9c74f,
-    /* linha 10: ...SSSS... */
-    56px 140px 0 #f9c74f,
-    70px 140px 0 #f9c74f,
-    84px 140px 0 #f9c74f,
-    98px 140px 0 #f9c74f;
-}
-
-/* O mesmo Brotinho em três tamanhos: transform: scale amplia o desenho todo.
-   O scale não muda o espaço que o elemento ocupa; flex centraliza o sprite na caixa. */
-.cover-sprout,
-.sprite-frame,
-.store-art {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.cover-sprout .sprout {
-  transform: scale(1.5);
-}
-
-.sprite-frame .sprout {
-  transform: scale(2);
-}
-
-.store-art .sprout {
-  transform: scale(0.75);
-}
-
-/* Topo da página da loja: margem negativa puxa a faixa até as bordas da caixa */
-.store-art {
-  height: 200px;
-  margin: -24px -24px 24px;
-  background-color: var(--color-paper-green);
-}
-
-/* Bordas pixeladas: quatro sombras sem desfoque, uma para cada lado.
-   Os cantos ficam vazios e a caixa parece desenhada com pixels. */
-.topics li {
-  box-shadow:
-    0 -4px 0 0 var(--color-sprout),
-    0 4px 0 0 var(--color-sprout),
-    -4px 0 0 0 var(--color-sprout),
-    4px 0 0 0 var(--color-sprout);
-}
-
-.game-card,
-.buy-button {
-  box-shadow:
-    0 -4px 0 0 var(--color-sun),
-    0 4px 0 0 var(--color-sun),
-    -4px 0 0 0 var(--color-sun),
-    4px 0 0 0 var(--color-sun);
-}
-
-.channel {
-  box-shadow:
-    0 -4px 0 0 var(--channel-color),
-    0 4px 0 0 var(--channel-color),
-    -4px 0 0 0 var(--channel-color),
-    4px 0 0 0 var(--channel-color);
-}
-
-.quote-lia {
-  box-shadow:
-    0 -4px 0 0 var(--color-orange),
-    0 4px 0 0 var(--color-orange),
-    -4px 0 0 0 var(--color-orange),
-    4px 0 0 0 var(--color-orange);
-}
-
-/* ===== Gradientes ===== */
 
 /* Scanlines: faixas de 2 px que alternam transparente e preto a 22%.
    repeating-linear-gradient repete o padrão até cobrir a capa toda.
@@ -987,40 +386,572 @@ footer .logo {
   pointer-events: none;
 }
 
-/* Grade de 32 px atrás do sprite: dois gradientes, um de linhas verticais
-   e outro de linhas horizontais. Cada um pinta 2 px de linha e o resto transparente,
-   e background-size repete o desenho a cada 32 px: um quadrado = um pixel do jogo. */
+/* ===== Sumário e editorial ===== */
+.toc {
+  grid-column: 1 / 5;
+  padding-right: 24px;
+  border-right: 4px solid var(--color-night);
+
+  ol {
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    margin-bottom: 16px;
+  }
+
+  a {
+    color: var(--color-night);
+    text-decoration: none;
+
+    /* :hover vale para o mouse; :focus-visible para quem navega com a tecla Tab.
+       & é o próprio link: &:hover vira .toc a:hover */
+    &:hover,
+    &:focus-visible {
+      color: var(--color-paper-green);
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+    }
+
+    &:focus-visible {
+      outline: 4px solid var(--color-night);
+      outline-offset: 4px;
+    }
+  }
+}
+
+.toc-number {
+  margin-right: 8px;
+  font-size: 14px;
+  color: var(--color-paper-green);
+}
+
+.editorial {
+  grid-column: 6 / 13;
+
+  h2 {
+    font-size: 44px;
+  }
+}
+
+/* columns divide o texto em colunas, como numa revista impressa */
+.editorial-text {
+  columns: 2;
+  column-gap: 24px;
+  margin-bottom: 24px;
+}
+
+.signature {
+  font-weight: 700;
+}
+
+/* ===== 01 · A ideia ===== */
+#idea {
+  .article-number {
+    color: var(--color-sprout);
+  }
+
+  .article-body {
+    grid-column: 4 / 9;
+  }
+}
+
+.game-card {
+  grid-column: 10 / 13;
+  align-self: start;
+  padding: 24px;
+  background-color: var(--color-panel);
+  box-shadow:
+    0 -4px 0 0 var(--color-sun),
+    0 4px 0 0 var(--color-sun),
+    -4px 0 0 0 var(--color-sun),
+    4px 0 0 0 var(--color-sun);
+
+  div {
+    margin-bottom: 12px;
+  }
+}
+
+/* Um item do grid da página também pode ser um grid: as três regras lado a lado */
+.rules {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  grid-column: 4 / 13;
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding-top: 16px;
+    border-top: 4px solid var(--color-sprout);
+  }
+}
+
+/* ===== 02 · Pixel art ===== */
+#pixel-art .article-body {
+  grid-column: 7 / 13;
+}
+
+.sprite-figure {
+  grid-column: 1 / 7;
+}
+
+/* Quadro de 448 × 480 px mais 4 px de borda de cada lado.
+   Grade de 32 px: dois gradientes, um de linhas verticais e outro de horizontais;
+   background-size repete o desenho a cada 32 px: um quadrado = um pixel do jogo. */
 .sprite-frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 456px;
+  height: 488px;
+  margin-bottom: 16px;
+  border: 4px solid var(--color-night);
+  background-color: var(--color-board);
   background-image:
     linear-gradient(to right, #d9d2c3 2px, transparent 2px),
     linear-gradient(to bottom, #d9d2c3 2px, transparent 2px);
   background-size: 32px 32px;
+
+  .sprout {
+    transform: scale(2);
+  }
 }
 
-/* ===== Hover e foco =====
-   :hover vale para o mouse; :focus-visible vale para quem navega com a tecla Tab.
-   Os dois recebem o mesmo destaque, e o foco ganha também um contorno bem visível. */
-
-.toc a:hover,
-.toc a:focus-visible {
-  color: var(--color-paper-green);
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
+.palette {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px 16px;
+  padding: 0;
+  list-style: none;
 }
 
-.toc a:focus-visible {
-  outline: 4px solid var(--color-night);
-  outline-offset: 4px;
+/* Amostras da paleta do Brotinho: cada cor numa caixinha com altura */
+.swatch {
+  display: block;
+  height: 48px;
+  margin-bottom: 8px;
+  border: 4px solid var(--color-night);
 }
 
-.buy-button:hover,
-.buy-button:focus-visible {
-  background-color: var(--color-paper);
+.swatch-leaf { background-color: #3fa34d; }
+.swatch-leaf-light { background-color: #7bd389; }
+.swatch-outline { background-color: #5c3a21; }
+.swatch-shell { background-color: #c98b4f; }
+.swatch-shell-light { background-color: #e3b07a; }
+.swatch-cheek { background-color: #f3722c; }
+.swatch-eyes { background-color: #1a1423; }
+.swatch-eye-shine { background-color: #fffaf0; }
+
+/* ===== 03 · Som ===== */
+#sound {
+  .article-number {
+    color: var(--color-sun);
+  }
+
+  .article-body {
+    grid-column: 4 / 11;
+  }
 }
 
-/* outline-offset de 8 px: o contorno passa por fora da borda pixelada de 4 px */
-.buy-button:focus-visible {
-  outline: 4px solid var(--color-paper);
-  outline-offset: 8px;
+.channels {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  grid-column: 1 / -1;
+  padding: 0;
+  list-style: none;
+}
+
+/* Cada canal guarda a própria cor em --channel-color;
+   a onda (stroke="currentColor"), o título e a borda usam essa cor */
+.channel {
+  padding: 24px;
+  background-color: var(--color-panel);
+  box-shadow:
+    0 -4px 0 0 var(--channel-color),
+    0 4px 0 0 var(--channel-color),
+    -4px 0 0 0 var(--channel-color),
+    4px 0 0 0 var(--channel-color);
+
+  svg {
+    display: block;
+    margin-bottom: 16px;
+    color: var(--channel-color);
+  }
+
+  .label {
+    color: var(--channel-color);
+  }
+}
+
+.channel-pulse {
+  --channel-color: var(--color-sprout);
+}
+
+.channel-triangle {
+  --channel-color: var(--color-sun);
+}
+
+.channel-noise {
+  --channel-color: var(--color-orange);
+}
+
+/* ===== 04 · Código ===== */
+#code {
+  .article-body {
+    grid-column: 1 / 8;
+  }
+
+  pre {
+    grid-column: 1 / 7;
+    padding: 24px 32px;
+    background-color: var(--color-night);
+    color: var(--color-sprout);
+    font-size: 14px;
+    line-height: 2;
+  }
+}
+
+.highlight {
+  grid-column: 9 / 13;
+  align-self: start;
+  padding: 24px 0;
+  border-top: 4px solid var(--color-night);
+  border-bottom: 4px solid var(--color-night);
+}
+
+.highlight-title {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.loop-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  grid-column: 1 / -1;
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding: 24px;
+    border: 4px solid var(--color-night);
+    background-color: var(--color-board);
+  }
+}
+
+.code-note {
+  grid-column: 7 / 12;
+  align-self: center;
+  color: var(--color-paper-soft);
+}
+
+/* ===== 05 · Testes =====
+   Um mosaico desenhado com nomes. Cada nome repetido ocupa mais colunas;
+   o mesmo nome em duas linhas ocupa as duas. */
+#tests {
+  grid-template-areas:
+    "intro intro intro intro intro lia lia lia lia caio caio caio"
+    "bia bia bia bia antonio antonio antonio antonio antonio caio caio caio"
+    "bia bia bia bia changes changes changes changes changes changes changes changes";
+  row-gap: 24px;
+
+  .article-body {
+    grid-area: intro;
+  }
+
+  .tests-label {
+    color: var(--color-orange);
+  }
+}
+
+.quote {
+  padding: 32px;
+}
+
+.quote-lia {
+  grid-area: lia;
+  background-color: var(--color-panel);
+  box-shadow:
+    0 -4px 0 0 var(--color-orange),
+    0 4px 0 0 var(--color-orange),
+    -4px 0 0 0 var(--color-orange),
+    4px 0 0 0 var(--color-orange);
+
+  blockquote {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+}
+
+/* O depoimento do Caio é o único com fundo claro: texto e nome escuros */
+.quote-caio {
+  grid-area: caio;
+  background-color: var(--color-sun);
+
+  blockquote {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--color-night);
+  }
+
+  .label {
+    color: var(--color-night);
+  }
+}
+
+.quote-bia {
+  grid-area: bia;
+  border: 4px solid var(--color-sprout);
+
+  blockquote {
+    font-size: 22px;
+    line-height: 1.45;
+  }
+}
+
+.quote-antonio {
+  grid-area: antonio;
+  background-color: var(--color-panel);
+
+  blockquote {
+    font-size: 22px;
+    line-height: 1.45;
+  }
+}
+
+.tests-changes {
+  grid-area: changes;
+  padding-top: 24px;
+  border-top: 4px solid var(--color-orange);
+
+  ul {
+    padding-left: 24px;
+  }
+
+  li {
+    margin-bottom: 8px;
+  }
+}
+
+/* ===== 06 · Lançamento ===== */
+#launch .article-body {
+  grid-column: 1 / 8;
+}
+
+/* A página da loja é escura, mesmo dentro de um bloco de papel */
+.store {
+  grid-column: 9 / 13;
+  align-self: start;
+  padding: 24px;
+  background-color: var(--color-night);
+  color: var(--color-paper);
+}
+
+/* Topo da página da loja: margem negativa puxa a faixa até as bordas da caixa */
+.store-art {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin: -24px -24px 24px;
+  background-color: var(--color-paper-green);
+
+  .sprout {
+    transform: scale(0.75);
+  }
+}
+
+.store-title {
+  font-size: 24px;
+  line-height: 1.3;
+  color: var(--color-sun);
+}
+
+.store-price {
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+
+.buy-button {
+  display: inline-block;
+  padding: 16px 24px;
+  background-color: var(--color-sun);
+  color: var(--color-night);
+  font-size: 16px;
+  text-decoration: none;
+  box-shadow:
+    0 -4px 0 0 var(--color-sun),
+    0 4px 0 0 var(--color-sun),
+    -4px 0 0 0 var(--color-sun),
+    4px 0 0 0 var(--color-sun);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-paper);
+  }
+
+  /* outline-offset de 8 px: o contorno passa por fora da borda pixelada de 4 px */
+  &:focus-visible {
+    outline: 4px solid var(--color-paper);
+    outline-offset: 8px;
+  }
+}
+
+.glossary {
+  grid-column: 1 / -1;
+  padding-top: 32px;
+  border-top: 4px solid var(--color-night);
+
+  dl {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px 32px;
+  }
+}
+
+/* ===== Expediente ===== */
+footer {
+  border-top: 4px solid var(--color-sun);
+
+  p {
+    font-size: 16px;
+  }
+
+  .logo {
+    grid-column: 1 / 5;
+    font-size: 24px;
+  }
+}
+
+.footer-text {
+  grid-column: 5 / 13;
+}
+
+/* ===== Brotinho em pixel art =====
+   Cada sombra "x y 0 cor" é uma cópia do elemento, sem desfoque, deslocada x para a
+   direita e y para baixo. Um elemento do tamanho de um pixel + uma sombra por pixel = um desenho.
+   A sombra não aparece embaixo do próprio elemento; por isso ele fica um pixel para fora
+   (top e left negativos) e as sombras começam em 1 pixel.
+   O mesmo Brotinho aparece em três tamanhos: transform: scale amplia o desenho todo,
+   sem mudar o espaço que ele ocupa; flex centraliza o sprite na caixa. */
+
+.pixel {
+  position: absolute;
+}
+
+/* 12 × 13 pixels de 16 px = 192 × 208 px */
+.sprout {
+  position: relative;
+  width: 192px;
+  height: 208px;
+
+  .pixel {
+    top: -16px;
+    left: -16px;
+    width: 16px;
+    height: 16px;
+    box-shadow:
+      /* linha 1: ....GG..GG.. */
+      80px 16px 0 #3fa34d,
+      96px 16px 0 #3fa34d,
+      144px 16px 0 #3fa34d,
+      160px 16px 0 #3fa34d,
+      /* linha 2: ...GLLGGLLG. */
+      64px 32px 0 #3fa34d,
+      80px 32px 0 #7bd389,
+      96px 32px 0 #7bd389,
+      112px 32px 0 #3fa34d,
+      128px 32px 0 #3fa34d,
+      144px 32px 0 #7bd389,
+      160px 32px 0 #7bd389,
+      176px 32px 0 #3fa34d,
+      /* linha 3: ....GLGGLG.. */
+      80px 48px 0 #3fa34d,
+      96px 48px 0 #7bd389,
+      112px 48px 0 #3fa34d,
+      128px 48px 0 #3fa34d,
+      144px 48px 0 #7bd389,
+      160px 48px 0 #3fa34d,
+      /* linha 4: .....GGGG... */
+      96px 64px 0 #3fa34d,
+      112px 64px 0 #3fa34d,
+      128px 64px 0 #3fa34d,
+      144px 64px 0 #3fa34d,
+      /* linha 5: ......GG.... */
+      112px 80px 0 #3fa34d,
+      128px 80px 0 #3fa34d,
+      /* linha 6: ......GG.... */
+      112px 96px 0 #3fa34d,
+      128px 96px 0 #3fa34d,
+      /* linha 7: ....BBBBBB.. */
+      80px 112px 0 #5c3a21,
+      96px 112px 0 #5c3a21,
+      112px 112px 0 #5c3a21,
+      128px 112px 0 #5c3a21,
+      144px 112px 0 #5c3a21,
+      160px 112px 0 #5c3a21,
+      /* linha 8: ...BHYYYYYB. */
+      64px 128px 0 #5c3a21,
+      80px 128px 0 #e3b07a,
+      96px 128px 0 #c98b4f,
+      112px 128px 0 #c98b4f,
+      128px 128px 0 #c98b4f,
+      144px 128px 0 #c98b4f,
+      160px 128px 0 #c98b4f,
+      176px 128px 0 #5c3a21,
+      /* linha 9: ..BHYWKYWKYB */
+      48px 144px 0 #5c3a21,
+      64px 144px 0 #e3b07a,
+      80px 144px 0 #c98b4f,
+      96px 144px 0 #fffaf0,
+      112px 144px 0 #1a1423,
+      128px 144px 0 #c98b4f,
+      144px 144px 0 #fffaf0,
+      160px 144px 0 #1a1423,
+      176px 144px 0 #c98b4f,
+      192px 144px 0 #5c3a21,
+      /* linha 10: ..BYYYYYYYYB */
+      48px 160px 0 #5c3a21,
+      64px 160px 0 #c98b4f,
+      80px 160px 0 #c98b4f,
+      96px 160px 0 #c98b4f,
+      112px 160px 0 #c98b4f,
+      128px 160px 0 #c98b4f,
+      144px 160px 0 #c98b4f,
+      160px 160px 0 #c98b4f,
+      176px 160px 0 #c98b4f,
+      192px 160px 0 #5c3a21,
+      /* linha 11: ..BYYYOOYYYB */
+      48px 176px 0 #5c3a21,
+      64px 176px 0 #c98b4f,
+      80px 176px 0 #c98b4f,
+      96px 176px 0 #c98b4f,
+      112px 176px 0 #f3722c,
+      128px 176px 0 #f3722c,
+      144px 176px 0 #c98b4f,
+      160px 176px 0 #c98b4f,
+      176px 176px 0 #c98b4f,
+      192px 176px 0 #5c3a21,
+      /* linha 12: ...BYYYYYYB. */
+      64px 192px 0 #5c3a21,
+      80px 192px 0 #c98b4f,
+      96px 192px 0 #c98b4f,
+      112px 192px 0 #c98b4f,
+      128px 192px 0 #c98b4f,
+      144px 192px 0 #c98b4f,
+      160px 192px 0 #c98b4f,
+      176px 192px 0 #5c3a21,
+      /* linha 13: ....BBBBBB.. */
+      80px 208px 0 #5c3a21,
+      96px 208px 0 #5c3a21,
+      112px 208px 0 #5c3a21,
+      128px 208px 0 #5c3a21,
+      144px 208px 0 #5c3a21,
+      160px 208px 0 #5c3a21;
+  }
 }
